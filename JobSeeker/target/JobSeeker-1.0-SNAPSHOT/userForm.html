@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87ceeb;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #ffcc00;
+            color: #333;
+            transform: scale(1.1);
+        }
+
+        .container {
+            text-align: center;
+            padding-top: 120px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff6600;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <h2>Create New Account</h2>
+        <form action="UserController" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female" required> Female
+                <input type="radio" name="gender" value="Other" required> Other
+            </div>
+
+            <div class="form-group">
+                <label for="mobileno">Mobile No:</label>
+                <input type="text" id="mobileno" name="mobileno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="">Select City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Amaravti">Amaravti</option>
+                    <option value="Nagpur">Nagpur</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Education:</label>
+                <input type="checkbox" name="education" value="Diploma"> Diploma
+                <input type="checkbox" name="education" value="UG"> UG
+                <input type="checkbox" name="education" value="PG"> PG
+            </div>
+
+            <div class="form-group">
+                <label for="file">Upload Resume:</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+
+            <input type="submit" value="Apply">
+        </form>
+    </div>
+</body>
+
+</html>

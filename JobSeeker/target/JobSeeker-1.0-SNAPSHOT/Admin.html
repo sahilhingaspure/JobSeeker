@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job - Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87ceeb;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 450px;
+            animation: fadeIn 1.2s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .container h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            color: #f0f0f0;
+            
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+            font-size: 14px;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus {
+            border: 1px solid #ffcc00;
+            box-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #ffcc00;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 10px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #ff6600;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Post Job</h2>
+        <form action="AdminServlet" method="POST">
+            <div class="form-group">
+                <label for="jobRole">Job Role:</label>
+                <input type="text" name="jobRole" id="jobRole" placeholder="Enter job role" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location" placeholder="Location of job" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vacancy">Vacancy:</label>
+                <input type="text" name="vacancy" id="vacancy" placeholder="Number of vacancies" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="text" name="time" id="time" placeholder="Full-time/Part-time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="datevalidation">Date Validation:</label>
+                <input type="date" name="datevalidation" id="datevalidation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="packages">CTC</label>
+                <input type="text" name="packages" id="packages" placeholder="Salary package" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Powered by Job Seeker Portal</p>
+        </div>
+    </div>
+</body>
+
+</html>
